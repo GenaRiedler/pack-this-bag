@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack This Bag Component</title>
+</head>
+<body>
+    <div class="customhtml ptb-diagram-section">
+        <style>
+
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .section-container {
+                margin: 0;
+                padding: 0;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+            }
+
+            .ptb-outer-wrap {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                
+/* 1. BACKGROUND IMAGE HERE */
+                
+                background-image: url(
+
+                    assets/ptb-bg.jpg
+                    
+                    );
+                background-repeat: no-repeat;
+                background-position: center;
+                min-width: 1100px;
+                min-height: 500px;
+            }
+
+            .ptb-bag {
+                position: relative;
+
+/* 2. BAG IMAGE HERE */
+
+                background-image: url(
+                    
+                    assets/tarmac-ico.png
+                    
+                    );
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 173px;
+                height: 378px;
+                padding: 60px;
+            }
+
+            .ptb-pieces .ptb-item {
+
+                visibility: visible;
+                opacity: .5;
+                text-align: center;
+                background: rgba(0, 0, 0, .0);
+                -moz-border-radius: 5px; 
+                -webkit-border-radius: 5px;  
+                border-radius: 5px; 
+                padding-top: 15px;
+                padding-bottom: 15px;
+                padding-left: 25px;
+                padding-right: 25px;
+                width: 150px;
+                height: 135px;
+                position: absolute;
+                z-index: 5;
+                transition: 0.75s;
+            }
+
+            .ptb-pieces {
+                background-color: #0168c7;
+                color: #0168c7;
+                font-family: 'Lato', sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                text-transform: uppercase;
+                border-radius: 7px;
+                cursor: pointer;
+                position: absolute;
+                z-index: 10;
+                transition: 0.75s;
+                text-align: center;
+            }
+
+            .ptb-bullet {
+                display: inline-block;
+                font-family: 'Lato', sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                text-align: center;
+                color: #fff;
+                background-color: #323232;
+                border-radius: 50%;
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+            }
+
+            .ptb-icon {
+                display: inline-block;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 75%;
+            }
+            
+            .ptb-pieces.cube-s-2 .ptb-item {
+               visibility: hidden;
+            }
+            
+            /* FOLDER ELEMENTS HERE */
+
+            .ptb-pieces.folder .ptb-item {
+                top: -35px;
+                left: 225px;
+            }
+
+            .ptb-pieces.folder {
+                top: 95px;
+                left: 90px;
+                width: 25px;
+                height: 310px;
+            }
+
+            .ptb-bullet.a {
+                margin: 142px 0;
+            }
+
+            .folder-icon {
+                
+/* 3. FOLDER IMAGE HERE */
+                background-image: url(
+                    
+                    assets/folder-m.png
+                    
+                    );
+            }
+
+            /* CUBE S ELEMENTS HERE */
+
+            .ptb-pieces.cube-s .ptb-item {
+                top: -35px;
+                left: 375px;
+            }
+
+            .ptb-pieces.cube-s {
+                top: 95px;
+                left: 175px;
+                width: 25px;
+                height: 125px;
+            }
+            
+            .ptb-pieces.cube-s-2 .ptb-item {
+                top: -165px;
+                left: 375px;
+            }
+
+            .ptb-pieces.cube-s-2 {
+                top: 225px;
+                left: 175px;
+                width: 25px;
+                height: 125px;
+            }
+
+            .ptb-bullet.b {
+                margin: 50px 0;
+            }
+            
+            .cube-s-icon {
+
+/* 4. CUBE IMAGE HERE */
+
+                background-image: url(
+                    
+                    assets/cube-s.png
+                    
+                    );
+            }
+
+            /* TOILETRY KIT ELEMENTS HERE */
+
+            .ptb-pieces.toiletry-kit .ptb-item {
+                top: -35px;
+                left: 665px;
+            }
+
+            .ptb-pieces.toiletry-kit {
+                top: 95px;
+                left: 120px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .ptb-bullet.c {
+                margin: 12.5px 12.5px;
+                width: 25px;
+            }
+
+            .toiletry-kit-icon {
+
+/* 5. TOILETRY KIT IMAGE HERE */
+
+                background-image: url(
+                    
+                    assets/toiletry-kit.png
+                    
+                    );
+            }
+
+            /* CUBE M ELEMENTS HERE */
+
+            .ptb-pieces.cube-m .ptb-item {
+                top: 120px;
+                left: 195px;
+            }
+            
+            .ptb-pieces.cube-m {
+                top: 150px;
+                left: 120px;
+                width: 50px;
+                height: 200px;
+            }
+
+            .ptb-bullet.d {
+                margin: 87px 12px;
+                width: 25px;
+            }
+            
+            .cube-m-icon {
+
+/* 6. CUBE M IMAGE HERE */
+
+                background-image: url(
+                    
+                    assets/cube-m.png
+                    
+                    );
+            }
+
+            /* SHOE SAC ELEMENTS HERE */
+
+            .ptb-pieces.shoe-sac .ptb-item {
+                top: -85px;
+                left: 430px;
+            }
+
+            .ptb-pieces.shoe-sac {
+                top: 355px;
+                left: 120px;
+                width: 80px;
+                height: 50px;
+            }
+
+            .ptb-bullet.e {
+                margin: 12.5px 27.5px;
+                width: 25px;
+            }
+
+            .shoe-sac-icon {
+
+/* 7. SHOE SAC IMAGE HERE */
+
+                background-image: url(
+                    
+                    assets/shoe-sac.png
+                    
+                    );
+            }
+
+            /* HOVER STYLES HERE */
+
+            .ptb-pieces:hover .ptb-item {
+                    cursor: default;
+                    visibility: visible;
+                    opacity: 1;
+                    background: rgba(0, 0, 0, .1);
+                }
+
+                .ptb-pieces:hover {
+                    background-color: #323232;
+                }
+
+                .ptb-pieces:active .ptb-item {
+                    cursor: default;
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                .ptb-pieces:active {
+                    background-color: #323232;
+                }
+
+            /* MEDIA QUERIES HERE */
+
+            @media (max-width: 1024px) {
+                
+                .ptb-outer-wrap {
+                    transform: scale(.7);
+                    transform-origin: top center;
+                }
+
+            }
+
+            @media (max-width: 768px) {
+                
+                .ptb-outer-wrap {
+
+                    justify-content: center;
+                    align-items: flex-start;
+
+/* 8. MOBILE BACKGROUND IMAGE HERE */
+
+                    background-image: url(
+
+                        assets/ptb-bg-m.jpg
+
+                    );
+                    background-position: bottom center;
+                    background-color:#f1eae4;
+                    margin: 0;
+                    min-width: 500px;
+                    min-height: 865px;
+                }
+
+                .ptb-pieces .ptb-item {
+                    transform: scale(.75);
+                    transform-origin: top center;
+                    -moz-border-radius: 8px; 
+                    -webkit-border-radius: 8px;  
+                    border-radius: 8px;
+                    font-size: 18px;
+                    height: 150px;
+                }
+
+                /*  POSITIONING FOR MOBILE */
+
+                .ptb-pieces.folder .ptb-item {
+                    top: 400px;
+                    left: -200px;
+                }
+
+                .ptb-pieces.cube-s .ptb-item {
+                    top: 400px;
+                    left: -130px;
+                }
+
+                .ptb-pieces.cube-s-2 .ptb-item {
+                    top: 270px;
+                    left: -130px;
+                }
+
+                .ptb-pieces.toiletry-kit .ptb-item {
+                    top: 400px;
+                    left: 81px;
+                }
+                
+                .ptb-pieces.cube-m .ptb-item {
+                    top: 485px;
+                    left: -230px;
+                }
+                
+                .ptb-pieces.shoe-sac .ptb-item {
+                    top: 281px;
+                    left: -75px;
+                }
+                
+            }
+        </style>
+
+
+<div class="section-container">
+    <div class="ptb-outer-wrap">
+        <div class="ptb-bag">
+                <div class="ptb-pieces folder">
+                    <div class="ptb-bullet a">A</div>
+                    <div class="ptb-item">
+                        <div class="ptb-icon folder-icon"></div>
+                        <div class="ptb-bullet">A</div>
+                        <span class="ptb-ptb-title">Folder</span>
+                    </div>
+                </div>
+                <div class="ptb-pieces cube-s">
+                    <div class="ptb-bullet b">B</div>
+                    <div class="ptb-item">
+                        <div class="ptb-icon cube-s-icon"></div>
+                        <div class="ptb-bullet">B</div>
+                        <span class="ptb-title">Cube S x2</span>
+                    </div>
+                </div>
+                <div class="ptb-pieces cube-s-2">
+                    <div class="ptb-bullet b">B</div>
+                    <div class="ptb-item">
+                        <div class="ptb-icon cube-s-icon"></div>
+                        <div class="ptb-bullet">B</div>
+                        <span class="ptb-title">Cube S x2</span>
+                    </div>
+                </div>
+                <div class="ptb-pieces toiletry-kit">
+                    <div class="ptb-bullet c">C</div>
+                    <div class="ptb-item">
+                        <div class="ptb-icon toiletry-kit-icon"></div>
+                        <div class="ptb-bullet">C</div>
+                        <span class="ptb-title">Toiletry Kit</span>
+                    </div>
+                </div>
+                <div class="ptb-pieces cube-m">
+                    <div class="ptb-bullet d">D</div>
+                    <div class="ptb-item">
+                        <div class="ptb-icon cube-m-icon"></div>
+                        <div class="ptb-bullet">D</div>
+                        <span class="ptb-title">Cube M</span>
+                    </div>
+                </div>
+                <div class="ptb-pieces shoe-sac">
+                    <div class="ptb-bullet e">E</div>
+                    <div class="ptb-item">
+                        <div class="ptb-icon shoe-sac-icon"></div>
+                        <div class="ptb-bullet">E</div>
+                        <span class="ptb-title">Shoe Sac</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+                
+    </div>
+</div>
+</body>
+</html>
