@@ -375,6 +375,20 @@
                 }
                 
             }
+            
+            @media (hover: none) and (any-pointer: coarse) {
+                /* ... */
+                .ptb-pieces:hover .ptb-item, .ptb-pieces:active .ptb-item {
+                    cursor: default;
+                    visibility: visible;
+                    opacity: 1;
+                    background: rgba(0, 0, 0, .1);
+                }
+
+                .ptb-pieces:hover, .ptb-pieces:active {
+                    background-color: #323232;
+                }
+            }
         </style>
 
 
